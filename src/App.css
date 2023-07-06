@@ -44,6 +44,10 @@
   border-radius: 5px;
   color: #888;
   cursor: pointer;
+    &:hover {
+      background-color: #202020;
+      border: 1px solid aqua;
+    }
 }
 .title-gif {
   color: aqua;

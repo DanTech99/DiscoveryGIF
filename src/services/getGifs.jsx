@@ -1,7 +1,7 @@
 
 const apiKey = "nBFalPFCXRgO8Fr0KQhZ04BkJSrIyTm7"
 
-
+// const apiKey = import.meta.env.VITE_API_KEY_GIF
 
 export const getGifs = ({keyword = 'anime'} = {}) => {
     const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=10&offset=0&rating=g&lang=es`;

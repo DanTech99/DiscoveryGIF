@@ -2,26 +2,23 @@ import { useState } from 'react'
 import './App.css'
 import ListOfGif from './components/ListOfGif'
 import SearchOfGif from './components/SearchOfGif'
-import GifLinks from './components/GifLinks'
+import GifCategories from './components/GifCategories'
 
 import {Route, Link} from 'wouter'
-
 
 function App() {
   const [keyword, setKeyword] = useState('')
 
   return (
     <>
-      <Link to='/'>🔙 regresar</Link> 
       <h1><span className='title-gif'>Gift</span>  Search</h1>
       <form action="">
         
         <input type="text" onChange={e => setKeyword(e.target.value)} value={keyword} className='inputSearch' placeholder='busca un gif' />
       </form>
 
-      <h3>Gif Recomendados</h3>
-      <GifLinks />
-     
+      <h2>Categories</h2>
+     <GifCategories />
 
       <div className="card">
         <h1>{keyword}</h1>
