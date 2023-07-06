@@ -11,7 +11,6 @@ export const getCategories = () => {
             const {name} = category
             return {name}
         })
-        console.log(categories)
         return categories;
     })
 }

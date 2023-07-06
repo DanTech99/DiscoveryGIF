@@ -11,7 +11,7 @@ export const getGifs = ({keyword = 'anime'} = {}) => {
     .then(response => {
       const { data } = response
       const gifs = data.map(image => {
-        const {images, title, id} = image
+        const {title, id} = image
         const {url} = image.images.downsized_medium
       
         return {title, id, url}

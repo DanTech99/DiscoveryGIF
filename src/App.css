@@ -24,7 +24,7 @@
   object-fit: cover;
 }
 .inputSearch {
-  width: auto;
+  width: 50%;
   padding: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -51,4 +51,20 @@
 }
 .title-gif {
   color: aqua;
+}
+
+.btn-alert {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #888;
+  cursor: pointer;
+  bottom: 100%;
+  left: 30%;
+  &:hover {
+    background-color: #202020;
+    border: 1px solid aqua;
+  }
 }
