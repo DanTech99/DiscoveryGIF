@@ -7,7 +7,7 @@ function Gif({title, url, id} = {}) {
     <>
       <a href={`#${id}`}>
           <img src={url} alt={title}  />
-      </a>
+      </a> 
     </>
   )
 }

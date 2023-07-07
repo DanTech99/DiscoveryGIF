@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'wouter'
 import { useEffect, useState } from 'react'
-import { getCategories } from '../services/getCategories'
+import { getCategories } from '../../services/getCategories'
 
 function GifCategories() {
 

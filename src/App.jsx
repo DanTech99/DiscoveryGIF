@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import ListOfGif from './components/ListOfGif'
-import SearchOfGif from './components/SearchOfGif'
-import GifCategories from './components/GifCategories'
+import ListOfGif from './components/gif/ListOfGif'
+import SearchOfGif from './components/gif/SearchOfGif'
+import GifCategories from './components/gif/GifCategories'
 
 import {Route, Link, useLocation} from 'wouter'
 
@@ -13,6 +13,7 @@ function App() {
   return (
     <>
       <h1><Link to='/'><span className='title-gif'>Gif</span>  Search</Link></h1>
+
       <form action="" style={{display: location === '/' ? 'block' : 'none'}}>
         
       <input type="text" onChange={e => setKeyword(e.target.value)} value={keyword} className='inputSearch' placeholder='busca un gif' />
@@ -24,8 +25,8 @@ function App() {
       <div className="card">
         <h1>{keyword}</h1>
         <section className='App-content'>
-        <Route path='/gif/:keyword' component={ListOfGif} />
-        <SearchOfGif keyword={keyword} />
+          <Route path='/gif/:keyword' component={ListOfGif} />
+          <SearchOfGif keyword={keyword} />
         </section>
       </div>
     </>
