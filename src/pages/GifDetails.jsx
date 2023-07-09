@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function GifDetails() {
-  return (
-    <div>GifDetails</div>
-  )
+	return <div>GifDetails</div>;
 }
 
-export default GifDetails
+export default GifDetails;

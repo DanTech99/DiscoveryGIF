@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -23,12 +23,26 @@
   height: 100%;
   object-fit: cover;
 }
+
+.form-container {
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+
 .inputSearch {
-  width: 50%;
+  width: 100%;
   padding: 1em;
-  border: 1px solid #ccc;
+  border: 1px solid #039cf5;
   border-radius: 5px;
   margin-bottom: 1em;
+  font-size: medium;
+}
+.inputSearch:focus {
+  outline: none;
+  border: 1px solid #039cf5;
+  box-shadow: 0 0 5px #039cf5;
 }
 
 .keyword-recomended {
@@ -50,7 +64,12 @@
     }
 }
 .title-gif {
-  color: aqua;
+  font-size: 100px;
+  font-weight: 900;
+  background: #0455CF;
+  background: linear-gradient(to right, #0455CF 0%, #30C4CF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .btn-alert {
