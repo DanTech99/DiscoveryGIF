@@ -1,53 +1,35 @@
-import { useState } from "react";
 import "./App.css";
-import ListOfGif from "./components/gif/ListOfGif";
-import SearchOfGif from "./components/gif/SearchOfGif";
-import GifCategories from "./components/gif/GifCategories";
-import FormSearchGif from "./components/gif/FormSearchGif";
+import SearchResults from "./pages/SearchResults";
+import { Detail } from "./pages/Detail";
+import Home from "./pages/Home";
 
-import { Route } from "wouter";
+import { Route, Link } from "wouter";
 
 function App() {
-	const [keyword, setKeyword] =
-		useState("");
-	const [
-		isvisibletag,
-		setIsvisibletag,
-	] = useState(false);
 
-	const handleShowCategories = () => {
-		setIsvisibletag(!isvisibletag);
-	};
+
 	return (
-		<>
-			<FormSearchGif
-				keword={keyword}
-				setKeyword={setKeyword}
-			/>
-
-			<button
-				type="button"
-				onClick={handleShowCategories}
-				className="btn-categories"
-			>
-				Categories
-			</button>
-			{isvisibletag ? (
-				<GifCategories />
-			) : null}
-
+		<div className="App">
+			<h1 className="title">
+				<Link to="/">Gif Search</Link>
+			</h1>
 			<div className="card">
 				<section className="App-content">
 					<Route
-						path="/gif/:keyword"
-						component={ListOfGif}
+						component={Home}
+						path="/"
 					/>
-					<SearchOfGif
-						keyword={keyword}
+					<Route
+						component={SearchResults}
+						path="/search/:keyword"
+					/>
+					<Route
+						component={Detail}
+						path="/gif/:id"
 					/>
 				</section>
 			</div>
-		</>
+		</div>
 	);
 }
 export default App;

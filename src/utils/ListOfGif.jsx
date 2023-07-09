@@ -1,13 +1,13 @@
 import React from "react";
 import {
-	useState,
 	useEffect,
+	useState,
 } from "react";
-import { getGifs } from "../../services/getGifs";
-import Gif from "./Gif";
+import { getGifs } from "../services/getGifs";
+import Gif from "../components/gif/Gif";
 
-export default function SearchOfGif({
-	keyword,
+export default function ListOfGif({
+	params: { keyword },
 }) {
 	const [gifts, setGifts] = useState(
 		[],

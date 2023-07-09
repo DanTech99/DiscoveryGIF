@@ -5,6 +5,7 @@ import {
 	useState,
 } from "react";
 import { getCategories } from "../../services/getCategories";
+import styles from "./Gif.module.css";
 
 function GifCategories() {
 	const [categories, setCategories] =
@@ -20,11 +21,11 @@ function GifCategories() {
 	return (
 		<>
 			<h2>Categories</h2>
-			<div className="keyword-recomended">
+			<div className={styles.keyword_recomended}>
 				{categories.map(({ name }) => (
 					<Link
-						to={`/gif/${name}`}
-						className="keyword-link"
+						to={`/search/${name}`}
+						className={styles.keyword_link}
 						key={name}
 					>
 						{name}

@@ -1,12 +1,13 @@
 import React from "react";
+import styles from "./Gif.module.css";
 
-function Gif({ title, url, id } = {}) {
+
+function Gif({ title, url, id,  } = {}) {
 	return (
-		<>
-			<a href={`#${id}`}>
-				<img src={url} alt={title} />
-			</a>
-		</>
+				<a href={`#${id}`} className={styles.icon_copy}>
+					<img src={url} alt={title} className={styles.gif_img} />
+				</a>
+	
 	);
 }
 
