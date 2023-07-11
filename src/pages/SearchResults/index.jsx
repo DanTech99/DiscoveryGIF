@@ -5,7 +5,7 @@ import {
 } from "react";
 import { getGifs } from "../../services/getGifs";
 import Gif from "../../components/gif/Gif";
-import styles from "../../components/gif/Gif.module.css"
+import styles from "../../components/gif/Gif.module.css";
 
 export default function ListOfGif({
 	params: { keyword },
@@ -20,28 +20,25 @@ export default function ListOfGif({
 		);
 	}, [keyword]);
 
+	const decodeKeyword = decodeURIComponent(keyword.replace("%20", " "))
+
 	return (
 		<>
-		<h1>Mostrando gif de: {keyword}</h1>
-		<div className={styles.item_gif}>
-			
-			{
-				gifts.map(
-				({ id, title, url }) => (
-					<Gif
-						key={id}
-						id={id}
-						title={title}
-						url={url}
-					/>
-					
-				),)
-			}
-
-		
-		</div>
+			<h1>
+				Mostrando gif de: {decodeKeyword}
+			</h1>
+			<div className={styles.item_gif}>
+				{gifts.map(
+					({ id, title, url }) => (
+						<Gif
+							key={id}
+							id={id}
+							title={title}
+							url={url}
+						/>
+					),
+				)}
+			</div>
 		</>
-		
-		
 	);
 }

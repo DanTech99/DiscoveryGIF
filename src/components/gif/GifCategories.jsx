@@ -21,11 +21,17 @@ function GifCategories() {
 	return (
 		<>
 			<h2>Categories</h2>
-			<div className={styles.keyword_recomended}>
+			<div
+				className={
+					styles.keyword_recomended
+				}
+			>
 				{categories.map(({ name }) => (
 					<Link
 						to={`/search/${name}`}
-						className={styles.keyword_link}
+						className={
+							styles.keyword_link
+						}
 						key={name}
 					>
 						{name}

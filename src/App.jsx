@@ -6,8 +6,6 @@ import Home from "./pages/Home";
 import { Route, Link } from "wouter";
 
 function App() {
-
-
 	return (
 		<div className="App">
 			<h1 className="title">
