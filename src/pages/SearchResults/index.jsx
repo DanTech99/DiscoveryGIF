@@ -4,41 +4,40 @@ import {
 	useState,
 } from "react";
 import { getGifs } from "../../services/getGifs";
-import Gif from "../../components/gif/Gif";
-import styles from "../../components/gif/Gif.module.css";
+import SpinnerLoader from "../../components/SpinnerLoader";
+import ListOfGif from "../../components/gif/ListOfGif";
 
-export default function ListOfGif({
+export default function SearchResult({
 	params: { keyword },
 }) {
 	const [gifts, setGifts] = useState(
 		[],
 	);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		getGifs({ keyword }).then((gifs) =>
-			setGifts(gifs),
-		);
+		setLoading(true);
+	
+		getGifs({ keyword }).then((gifs) => {
+			setGifts(gifs)
+			setLoading(false)
+		})
+		.catch((err) => {
+			console.log(err);
+			setLoading(false);
+		});
+		
 	}, [keyword]);
 
 	const decodeKeyword = decodeURIComponent(keyword.replace("%20", " "))
 
 	return (
 		<>
-			<h1>
-				Mostrando gif de: {decodeKeyword}
-			</h1>
-			<div className={styles.item_gif}>
-				{gifts.map(
-					({ id, title, url }) => (
-						<Gif
-							key={id}
-							id={id}
-							title={title}
-							url={url}
-						/>
-					),
-				)}
-			</div>
+		 {
+				loading
+				? <SpinnerLoader />
+				: <ListOfGif gifs={gifts} decodeKeyword={decodeKeyword} />
+		 }
 		</>
 	);
 }

@@ -16,10 +16,9 @@ function FormSearchGif() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		pushLocation(`/search/${keyword}`);
-		console.log(keyword);
-
 		// navegar a otra ruta
+		pushLocation(`/search/${keyword}`);
+
 	};
 
 	const handleChange = (e) => {

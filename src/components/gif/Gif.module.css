@@ -54,11 +54,12 @@
   
 }
 
-.icon_copy {
-  position: relative;
-}
-.icon_copy::after {
- 
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+ bottom: 50px;
 }
 
 .icon_copy:hover::after {

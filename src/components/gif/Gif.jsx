@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "./Gif.module.css";
+import { useState } from "react";
+import { Link, useLocation } from "wouter";
 
 function Gif({ title, url, id } = {}) {
+
+	
 	return (
 		<a
-			href={`#${id}`}
+			href={`/gif/${id}`}
 			className={styles.icon_copy}
 		>
 			<img
