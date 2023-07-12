@@ -6,13 +6,13 @@ import Gif from "./Gif";
 import styles from "./Gif.module.css";
 
 export default function ListOfGif({gifs, decodeKeyword}) {
-	const [gifts, setGifts] = useState(gifs);
+	const [gif, setGif] = useState(gifs);
 
 	return (
 		<>
 		<h1>Buscando los Gif de: {decodeKeyword}</h1>
 		<div className={styles.item_gif}>
-		{gifts.map(
+		{gif.map(
 			({ id, title, url }) => (
 				<Gif
 					key={id}

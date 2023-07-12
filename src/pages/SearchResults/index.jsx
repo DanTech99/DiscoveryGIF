@@ -1,33 +1,26 @@
 import React from "react";
-import {
-	useEffect,
-	useState,
-} from "react";
-import { getGifs } from "../../services/getGifs";
 import SpinnerLoader from "../../components/SpinnerLoader";
 import ListOfGif from "../../components/gif/ListOfGif";
+import { useGifs } from "../../hooks/useGifs";
 
 export default function SearchResult({
 	params: { keyword },
 }) {
-	const [gifts, setGifts] = useState(
-		[],
-	);
-	const [loading, setLoading] = useState(false);
+	const {loading, gifs} = useGifs({keyword})
 
-	useEffect(() => {
-		setLoading(true);
+	// useEffect(() => {
+	// 	setLoading(true);
 	
-		getGifs({ keyword }).then((gifs) => {
-			setGifts(gifs)
-			setLoading(false)
-		})
-		.catch((err) => {
-			console.log(err);
-			setLoading(false);
-		});
+	// 	getGifs({ keyword }).then((gifs) => {
+	// 		setGifts(gifs)
+	// 		setLoading(false)
+	// 	})
+	// 	.catch((err) => {
+	// 		console.log(err);
+	// 		setLoading(false);
+	// 	});
 		
-	}, [keyword]);
+	// }, [keyword]);
 
 	const decodeKeyword = decodeURIComponent(keyword.replace("%20", " "))
 
@@ -36,7 +29,7 @@ export default function SearchResult({
 		 {
 				loading
 				? <SpinnerLoader />
-				: <ListOfGif gifs={gifts} decodeKeyword={decodeKeyword} />
+				: <ListOfGif gifs={gifs} decodeKeyword={decodeKeyword} />
 		 }
 		</>
 	);
