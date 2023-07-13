@@ -6,7 +6,7 @@ import Gif from "./Gif";
 import styles from "./Gif.module.css";
 
 export default function ListOfGif({gifs, decodeKeyword}) {
-	const [gif, setGif] = useState(gifs);
+	const [gif, setGif] = useState(gifs)
 
 	return (
 		<>
@@ -20,7 +20,7 @@ export default function ListOfGif({gifs, decodeKeyword}) {
 					title={title}
 					url={url}
 				/>
-			),
+			)
 		)}
 	</div>
 		</>

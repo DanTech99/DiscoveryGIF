@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Gif.module.css";
-import { useState } from "react";
-import { Link, useLocation } from "wouter";
 
 function Gif({ title, url, id } = {}) {
 

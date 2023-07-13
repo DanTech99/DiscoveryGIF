@@ -19,7 +19,6 @@ export const getGifs = ({
 
 				return { title, id, url };
 			});
-			console.log(gifs);
 			return gifs;
 		});
 };
