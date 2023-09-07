@@ -18,7 +18,7 @@ export default function Home() {
 					loading ? <SpinnerLoader /> : gifs.map((gif) => {
 						return (
 							<div key={gif.id}>
-								<img src={gif.url} alt='gifs' className="img-home" />
+								<img src={gif.url} alt='gifs' className="img-home" loading="lazy" />
 							</div>
 						);
 					})

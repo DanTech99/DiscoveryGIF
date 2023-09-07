@@ -8,9 +8,6 @@ export function useGifs({keyword} = {keyword: null}) {
 	);
 	const [loading, setLoading] = useState(false);
 
-
-	
-
 	useEffect(() => {
 		setLoading(true);
 

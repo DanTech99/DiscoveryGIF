@@ -13,6 +13,7 @@ function Gif({ title, url, id } = {}) {
 				src={url}
 				alt={title}
 				className={styles.gif_img}
+				loading="lazy"
 			/>
 		</a>
 	);

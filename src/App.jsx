@@ -9,7 +9,7 @@ function App() {
 	return (
 		<div className="App">
 			<h1 className="title">
-				<Link to="/">Gif Search</Link>
+				<Link to="/">React Gif</Link>
 			</h1>
 			<div className="card">
 				<section className="App-content">
