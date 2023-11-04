@@ -7,6 +7,7 @@ import SpinnerLoader from "../../components/SpinnerLoader";
 export default function Home() {
 
 	const {gifs, loading} = useGifs();
+	console.log(gifs);
 	
 	return (
 		<div>
